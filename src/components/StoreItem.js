@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Spacer, Tag, Image, Text, Center } from "@chakra-ui/react";
+import { Box, Heading, Tag, Image, Center } from "@chakra-ui/react";
 import React from "react";
 
 function StoreItem({title, price, image}) {
@@ -8,7 +8,7 @@ function StoreItem({title, price, image}) {
                     <Image src={image} w={24}/>
                 </Center>
                 
-                <Heading noOfLines={2} size="sm" fontWeight="normal">
+                <Heading noOfLines={2} size="sm" fontWeight="normal" mt={4}>
                     {title}
                 </Heading>
                 <Tag mt={4}>{price}</Tag>
