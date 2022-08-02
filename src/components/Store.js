@@ -13,16 +13,6 @@ function Store({items, onItemAdd}) {
                     return <StoreItem title={item.title} price={item.price} />
                 })}
             </SimpleGrid>
-             
-            <Input mt={10} ref={itemNameRef} placeholder="Item name" />
-            <Input mt={2} ref={itemPriceRef} placeholder="Item price" type="number" />
-
-            <Button mt={2} onClick={()=> {
-                onItemAdd({
-                    title: itemNameRef.current.value,
-                    price: itemPriceRef.current.value
-                })
-            }}>Add Item</Button>
         </Box>
     )
 }

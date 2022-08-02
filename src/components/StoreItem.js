@@ -4,11 +4,10 @@ import React from "react";
 function StoreItem({title, price}) {
     return (
         <Box p={4} borderRadius='lg' borderWidth="1px">
-            <Flex alignItems='center'>
-                <Heading size="sm" fontWeight="normal">{title}</Heading>
-                <Spacer />
-                <Tag>{price}</Tag>
-            </Flex>
+                <Heading noOfLines={2} size="sm" fontWeight="normal">
+                    {title}
+                </Heading>
+                <Tag mt={4}>{price}</Tag>
         </Box>)
 }
 export default StoreItem;

@@ -13,11 +13,6 @@ function App() {
     }, [])
   return (
     <div>
-      {/* <ol>
-        {storeItems.map((item) => (
-        <ListItem text={item}/>
-        ))}
-      </ol> */}
         <Store items={storeItem} onItemAdd={(itemData) => {setStoreItem([...storeItem, itemData])}}/>
     </div>
   );
