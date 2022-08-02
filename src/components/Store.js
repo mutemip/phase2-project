@@ -1,22 +1,33 @@
-import { Box, Button, GridItem, Heading, Input, SimpleGrid, Stack } from "@chakra-ui/react";
+import { Box, GridItem, Input, SimpleGrid} from "@chakra-ui/react";
 import StoreItem from "./StoreItem";
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
+import Search from "./Search";
 
 function Store({items, onItemAdd}) {
-    const itemNameRef = useRef();
-    const itemPriceRef = useRef();
+    const [searchItem, setSearchItem] = useState(items)
+    
+
+    useEffect(() => {
+        setSearchItem(items)
+    }, [items]);
 
     return (
         <Box>
             <Header title="Dirty Shop"/>
+            <Box p={10}>
+            <Search onSearch={handleSearchOnChange}/>
+            {/* <Input onChange={handleSearchOnChange}
+            placeholder="Search Items" mt={4} /> */}
+
             <SimpleGrid columns={4} spacing={4} mt={4} p={2}>
-                {items.map((item) => {
+                {searchItem.map((item) => {
                     return <GridItem>
                         <StoreItem {...item} />
                     </GridItem>
                 })}
             </SimpleGrid>
+            </Box>
         </Box>
     )
 }
