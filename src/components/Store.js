@@ -7,7 +7,11 @@ import Search from "./Search";
 function Store({items, onItemAdd}) {
     const [searchItem, setSearchItem] = useState(items)
     
-
+    function handleSearchOnChange(e){
+        let f = items.filter(item => 
+            item.title.toLowerCase().includes(e.target.value.toLocaleLowerCase()))
+        setSearchItem(f);
+    }
     useEffect(() => {
         setSearchItem(items)
     }, [items]);
