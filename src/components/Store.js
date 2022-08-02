@@ -1,10 +1,10 @@
-import { Box, GridItem, Input, SimpleGrid} from "@chakra-ui/react";
+import { Box, Center, GridItem, Input, SimpleGrid, Spinner} from "@chakra-ui/react";
 import StoreItem from "./StoreItem";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Search from "./Search";
 
-function Store({items, onItemAdd}) {
+function Store({items, loading}) {
     const [searchItem, setSearchItem] = useState(items)
     
     function handleSearchOnChange(e){
@@ -19,6 +19,7 @@ function Store({items, onItemAdd}) {
     return (
         <Box>
             <Header title="Dirty Shop"/>
+            {loading ? <Center mt={6}><Spinner /></Center>:
             <Box p={10}>
             <Search onSearch={handleSearchOnChange}/>
             {/* <Input onChange={handleSearchOnChange}
@@ -32,6 +33,7 @@ function Store({items, onItemAdd}) {
                 })}
             </SimpleGrid>
             </Box>
+            }
         </Box>
     )
 }
