@@ -1,7 +1,8 @@
 import { Box } from "@chakra-ui/react";
 
 
-function Product(){
+function Product(props){
+    console.log("props", props)
     return <Box>
         Product details
     </Box>
