@@ -1,4 +1,4 @@
-import { Box, Heading, Tag, Image, Center } from "@chakra-ui/react";
+import { Box, Heading, Tag, Image, Center, Button, Stack } from "@chakra-ui/react";
 import React from "react";
 
 function StoreItem({title, price, image}) {
@@ -11,7 +11,12 @@ function StoreItem({title, price, image}) {
                 <Heading noOfLines={2} size="sm" fontWeight="normal" mt={4}>
                     {title}
                 </Heading>
-                <Tag mt={4}>{price}</Tag>
+                <Stack>
+                <Tag mt={4}>$ {price}</Tag>
+                <Button size="sm" colorScheme="pink">Buy Now</Button>
+                <Button size="sm">Share Product</Button>
+                </Stack>
+                
         </Box>)
 }
 export default StoreItem;
